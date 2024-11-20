@@ -1,0 +1,33 @@
+stages:
+- stage: "Build"
+  displayName: 'Build'
+  jobs:
+  - job: 'Build'
+    displayName: 'Build .NET'
+    pool:
+      name: Default   # Specify the agent pool (default in your case)
+    steps:
+    - script: |
+        timeout /t 1 /nobreak   # Sleep for 1 second
+
+- stage: "Test"
+  displayName: 'Test'
+  jobs:
+  - job: 'Test'
+    displayName: 'Test .NET'
+    pool:
+      name: Default   # Specify the agent pool (default in your case)
+    steps:
+    - script: |
+        timeout /t 1 /nobreak   # Sleep for 1 second
+
+- stage: "Deploy"
+  displayName: 'Deploy'
+  jobs:
+  - job: 'Deploy'
+    displayName: 'Deploy .NET'
+    pool:
+      name: Default   # Specify the agent pool (default in your case)
+    steps:
+    - script: |
+        timeout /t 1 /nobreak   # Sleep for 1 second
